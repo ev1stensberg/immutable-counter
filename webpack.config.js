@@ -21,8 +21,8 @@ module.exports = env => {
     bail: env.prod,
     module: {
       loaders: [
-        {test: /\.js$/, loader: 'babel!eslint', exclude: /node_modules/},
-      ]
+        {test: /\.js$/, loader:'babel?presets[]=es2015,presets[]=stage-2,presets[]=react'}
+     ]
     },
     plugins: [
       env.test ? undefined : new HtmlWebpackPlugin({
